@@ -126,7 +126,7 @@
 	
 	
 	self.titleLabel.frame = r;
-	[self.titleLabel sizeToFit];
+	if([[[UIDevice currentDevice] systemVersion] floatValue] >= 6) [self.titleLabel sizeToFit];
 	
 	hh = h > 200 ? (FONT_SIZE+2.0) * 2 : FONT_SIZE+2;
 	r = CGRectInset(self.bounds, 5, 5);
@@ -136,7 +136,7 @@
 
 	self.locationLabel.frame = r;
 	self.locationLabel.hidden = self.locationLabel.text.length > 0 ? NO : YES;
-	[self.locationLabel sizeToFit];
+	if([[[UIDevice currentDevice] systemVersion] floatValue] >= 6) [self.locationLabel sizeToFit];
 
 }
 
